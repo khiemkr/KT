@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ListPerson from "./component/ListPerson";
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Update from "./component/Update";
+import UpdateChucvu from "./component/UpdateChucvu";
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Routes>
+        <Route path="/" element={<ListPerson />}/>
+        <Route path="Add" element={<Update />}/>
+        <Route path="chucvu" element={<UpdateChucvu />}/>
+    </Routes>
     </div>
+  </BrowserRouter>
   );
 }
 
